@@ -40,3 +40,13 @@ test("Test win in column X", () =>{
     ];
     expect(checkWin(arr)).toBe("WIN");
 });
+
+
+test("Test win in column O", () =>{
+    let arr = [
+        ["", "X", "O"],
+        ["", "X", "O"],
+        ["X", "", "O"]
+    ];
+    expect(checkWin(arr)).toBe("WIN");
+});
