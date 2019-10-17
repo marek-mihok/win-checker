@@ -1,5 +1,7 @@
 # win-checker
-**TASK:** Application checks if the game state (represented by 2D array) of "Tic-tac-toe" is a win state, draw state or in progress.
+**TASK:** Application checks if the game state (represented by 2D array) of "Tic-tac-toe" is a win state, draw state or in progress.  
+
+* Function: checkwin(array[][]){}
 
 Example states:
 
