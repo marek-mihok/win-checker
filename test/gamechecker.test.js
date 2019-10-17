@@ -14,11 +14,20 @@ test("Test non empty array not ended game", () =>{
     expect(checkWin(arr)).toBe("IN PROGRESS");
 });
 
-test("Test win in line", () =>{
+test("Test win in line X", () =>{
     let arr = [
         ["X", "X", "X"],
         ["", "", "O"],
         ["O", "", ""]
+    ];
+    expect(checkWin(arr)).toBe("WIN");
+});
+
+test("Test win in line O", () =>{
+    let arr = [
+        ["X", "", "X"],
+        ["O", "O", "O"],
+        ["", "X", ""]
     ];
     expect(checkWin(arr)).toBe("WIN");
 });
