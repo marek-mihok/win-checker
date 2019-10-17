@@ -106,7 +106,7 @@ function checkwin(array)
                 win = false;
                 wrong = false;
                 // Now left down
-                for (let xLine = line + 1; xLine < len; ++xLine) {
+                for (let xLine = line - 1; xLine >= 0; --xLine) {
                     for (let xCol = col - 1; xCol >= 0; --xCol) {
                         if (array[xLine][xCol] != winning)
                             wrong = true;
