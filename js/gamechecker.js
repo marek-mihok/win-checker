@@ -37,6 +37,34 @@ function checkwin(array)
         }
     }
 
+    // Check columns
+    let len = array.length;
+    for (let col = 0; col < len; ++col) {
+        let winning = "";
+        for (let line = 0; line < len; ++line) {
+            let character = array[line][col];
+            if (winning && winning == character) {
+                if (character == pCh1)
+                    pFound1++;
+                if (character == pCh2)
+                    pFound2++;
+                if (pFound1 >= wNeed) {
+                    pFound1 = 0;
+                    player1++;
+                }
+                if (pFound2 >= wNeed) {
+                    pFound2 = 0;
+                    player2++;
+                }
+            }
+            else if (character) {
+                winning = character;
+                pFound1 = character == pCh1;
+                pFound2 = character == pCh2;
+            }
+        }
+    }
+
     if (player1 || player2)
         return "WIN";
 
