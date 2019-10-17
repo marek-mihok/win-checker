@@ -4,13 +4,13 @@
 Example states:
 
 * Game state: WIN
-+-+-+-+
-|X|O|O|
-+-+-+-+
-|O|O|X|
-+-+-+-+
-|X|O|X|
-+-+-+-+
++-+-+-+  
+|X|O|O|  
++-+-+-+  
+|O|O|X|  
++-+-+-+  
+|X|O|X|  
++-+-+-+  
 For given 2D array it should output: WIN
 
 
