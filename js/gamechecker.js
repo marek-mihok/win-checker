@@ -65,6 +65,76 @@ function checkwin(array)
         }
     }
 
+    // Check diagonals
+    for (let line = 0; line < len; ++line)
+    {
+        // Find first letter to check
+        for (let col = 0; col < len; ++col)
+        {
+            // Now check only right down and left down
+            if (array[line][col])
+            {
+                let winning = array[line][col];
+                let wrong = false;
+                let win = false;
+                // Start right down
+                for (let xLine = line + 1; xLine < len; ++xLine) {
+                    for (let xCol = col + 1; xCol < len; ++xCol) {
+                        if (array[xLine][xCol] != winning)
+                            wrong = true;
+                        else if (winning == pCh1) {
+                            pFound1++;
+                            if (pFound1 >= wNeed) {
+                                pFound1 = 0;
+                                player1++;
+                                win = true;
+                            }
+                        } else if (winning == pCh2) {
+                            pFound2++;
+                            if (pFound2 >= wNeed) {
+                                pFound2 = 0;
+                                player2++;
+                                win = true;
+                            }
+                        }
+                        if (wrong || win)
+                            break;
+                    }
+                    if (wrong || win)
+                        break;
+                }
+                win = false;
+                wrong = false;
+                // Now left down
+                for (let xLine = line + 1; xLine < len; ++xLine) {
+                    for (let xCol = col - 1; xCol >= 0; --xCol) {
+                        if (array[xLine][xCol] != winning)
+                            wrong = true;
+                        else if (winning == pCh1) {
+                            pFound1++;
+                            if (pFound1 >= wNeed) {
+                                pFound1 = 0;
+                                player1++;
+                                win = true;
+                            }
+                        } else if (winning == pCh2) {
+                            pFound2++;
+                            if (pFound2 >= wNeed) {
+                                pFound2 = 0;
+                                player2++;
+                                win = true;
+                            }
+                        }
+                        if (wrong || win)
+                            break;
+                    }
+                    if (wrong || win)
+                        break;
+                }
+            }
+        }
+    }
+
     if (player1 || player2)
         return "WIN";
 
