@@ -158,8 +158,10 @@ function checkwin(array)
         }
     }
 
-    if (player1 || player2)
-        return "WIN";
+    if (player1)
+        return "WIN. Player X Wins!";
+    if (player2)
+        return "WIN. Player O Wins!";
 
     if (!someFree && !someEl)
         return "IN PROGRESS";
