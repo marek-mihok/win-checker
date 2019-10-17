@@ -11,6 +11,7 @@ function checkwin(array)
     let pCh2 = "O";
 
     let wNeed = 3;
+
     // Check lines
     for (let line  of array) {
         let winning = "";
@@ -37,6 +38,8 @@ function checkwin(array)
         }
     }
 
+    pFound1 = 0;
+    pFound2 = 0;
     // Check columns
     let len = array.length;
     for (let col = 0; col < len; ++col) {
@@ -77,56 +80,60 @@ function checkwin(array)
                 let winning = array[line][col];
                 let wrong = false;
                 let win = false;
+                pFound2 = winning == pCh2;
+                pFound1 = winning == pCh1;
                 // Start right down
+                let xCol = col;
                 for (let xLine = line + 1; xLine < len; ++xLine) {
-                    for (let xCol = col + 1; xCol < len; ++xCol) {
-                        if (array[xLine][xCol] != winning)
-                            wrong = true;
-                        else if (winning == pCh1) {
-                            pFound1++;
-                            if (pFound1 >= wNeed) {
-                                pFound1 = 0;
-                                player1++;
-                                win = true;
-                            }
-                        } else if (winning == pCh2) {
-                            pFound2++;
-                            if (pFound2 >= wNeed) {
-                                pFound2 = 0;
-                                player2++;
-                                win = true;
-                            }
+                    xCol++;
+                    if (xCol >= len)
+                        break;
+                    if (array[xLine][xCol] != winning)
+                        wrong = true;
+                    else if (winning == pCh1) {
+                        pFound1++;
+                        if (pFound1 >= wNeed) {
+                            pFound1 = 0;
+                            player1++;
+                            win = true;
                         }
-                        if (wrong || win)
-                            break;
+                    } else if (winning == pCh2) {
+                        pFound2++;
+                        if (pFound2 >= wNeed) {
+                            pFound2 = 0;
+                            player2++;
+                            win = true;
+                        }
                     }
                     if (wrong || win)
                         break;
                 }
                 win = false;
                 wrong = false;
-                // Now left down
-                for (let xLine = line - 1; xLine >= 0; --xLine) {
-                    for (let xCol = col - 1; xCol >= 0; --xCol) {
-                        if (array[xLine][xCol] != winning)
-                            wrong = true;
-                        else if (winning == pCh1) {
-                            pFound1++;
-                            if (pFound1 >= wNeed) {
-                                pFound1 = 0;
-                                player1++;
-                                win = true;
-                            }
-                        } else if (winning == pCh2) {
-                            pFound2++;
-                            if (pFound2 >= wNeed) {
-                                pFound2 = 0;
-                                player2++;
-                                win = true;
-                            }
+                pFound2 = winning == pCh2;
+                pFound1 = winning == pCh1;
+                // Start right down
+                xCol = col;
+                for (let xLine = line + 1; xLine < len; ++xLine) {
+                    xCol--;
+                    if (xCol < 0)
+                        break;
+                    if (array[xLine][xCol] != winning)
+                        wrong = true;
+                    else if (winning == pCh1) {
+                        pFound1++;
+                        if (pFound1 >= wNeed) {
+                            pFound1 = 0;
+                            player1++;
+                            win = true;
                         }
-                        if (wrong || win)
-                            break;
+                    } else if (winning == pCh2) {
+                        pFound2++;
+                        if (pFound2 >= wNeed) {
+                            pFound2 = 0;
+                            player2++;
+                            win = true;
+                        }
                     }
                     if (wrong || win)
                         break;

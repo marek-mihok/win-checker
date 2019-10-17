@@ -76,3 +76,12 @@ test("Test win in diagonal left O", () =>{
     ];
     expect(checkWin(arr)).toBe("WIN");
 });
+
+test("Test draw", () =>{
+    let arr = [
+        ["O", "X", "O"],
+        ["O", "X", "X"],
+        ["X", "O", "O"]
+    ];
+    expect(checkWin(arr)).toBe("DRAW");
+});
