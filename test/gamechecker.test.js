@@ -31,3 +31,12 @@ test("Test win in line O", () =>{
     ];
     expect(checkWin(arr)).toBe("WIN");
 });
+
+test("Test win in column X", () =>{
+    let arr = [
+        ["O", "X", "O"],
+        ["", "X", "O"],
+        ["", "X", ""]
+    ];
+    expect(checkWin(arr)).toBe("WIN");
+});
