@@ -1,9 +1,9 @@
 # win-checker
-TASK: Application checks if the game state (represented by 2D array) of "Tic-tac-toe" is a win state, draw state or in progress.
+**TASK:** Application checks if the game state (represented by 2D array) of "Tic-tac-toe" is a win state, draw state or in progress.
 
 Example states:
 
-Game state: WIN
+* Game state: WIN
 +-+-+-+
 |X|O|O|
 +-+-+-+
@@ -14,7 +14,7 @@ Game state: WIN
 For given 2D array it should output: WIN
 
 
-Game state: WIN
+* Game state: WIN
 +-+-+-+
 | |O| |
 +-+-+-+
@@ -25,7 +25,7 @@ Game state: WIN
 For given 2D array it should output: WIN
 
 
-Game state: DRAW
+* Game state: DRAW
 +-+-+-+
 |X|O|O|
 +-+-+-+
@@ -33,7 +33,7 @@ Game state: DRAW
 +-+-+-+
 |X|O|O|
 +-+-+-+
-For given 2D array it should output: DRAW
+* For given 2D array it should output: DRAW
 
 Game state: IN-PROGRESS
 +-+-+-+
@@ -46,9 +46,9 @@ Game state: IN-PROGRESS
 For given 2D array it should output: IN-PROGRESS
 
 
-BONUS: Add the winner to output.
+**BONUS:** Add the winner to output.
 
 Examples: 
 
-WIN. Player O Wins! 
-WIN. Player X Wins! 
+* WIN. Player O Wins! 
+* WIN. Player X Wins! 
