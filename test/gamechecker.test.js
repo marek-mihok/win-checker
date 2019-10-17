@@ -20,7 +20,7 @@ test("Test win in line X", () =>{
         ["", "", "O"],
         ["O", "", ""]
     ];
-    expect(checkWin(arr)).toBe("WIN");
+    expect(checkWin(arr)).toBe("WIN. Player X Wins!");
 });
 
 test("Test win in line O", () =>{
@@ -29,7 +29,7 @@ test("Test win in line O", () =>{
         ["O", "O", "O"],
         ["", "X", ""]
     ];
-    expect(checkWin(arr)).toBe("WIN");
+    expect(checkWin(arr)).toBe("WIN. Player O Wins!");
 });
 
 test("Test win in column X", () =>{
@@ -38,7 +38,7 @@ test("Test win in column X", () =>{
         ["", "X", "O"],
         ["", "X", ""]
     ];
-    expect(checkWin(arr)).toBe("WIN");
+    expect(checkWin(arr)).toBe("WIN. Player X Wins!");
 });
 
 test("Test win in column O", () =>{
@@ -47,7 +47,7 @@ test("Test win in column O", () =>{
         ["", "X", "O"],
         ["X", "", "O"]
     ];
-    expect(checkWin(arr)).toBe("WIN");
+    expect(checkWin(arr)).toBe("WIN. Player O Wins!");
 });
 
 test("Test win in diagonal X", () =>{
@@ -56,7 +56,7 @@ test("Test win in diagonal X", () =>{
         ["", "X", "O"],
         ["", "", "X"]
     ];
-    expect(checkWin(arr)).toBe("WIN");
+    expect(checkWin(arr)).toBe("WIN. Player X Wins!");
 });
 
 test("Test win in diagonal O", () =>{
@@ -65,7 +65,7 @@ test("Test win in diagonal O", () =>{
         ["", "O", "X"],
         ["", "", "O"]
     ];
-    expect(checkWin(arr)).toBe("WIN");
+    expect(checkWin(arr)).toBe("WIN. Player O Wins!");
 });
 
 test("Test win in diagonal left O", () =>{
@@ -74,7 +74,7 @@ test("Test win in diagonal left O", () =>{
         ["", "O", "X"],
         ["O", "", ""]
     ];
-    expect(checkWin(arr)).toBe("WIN");
+    expect(checkWin(arr)).toBe("WIN. Player O Wins!");
 });
 
 test("Test draw", () =>{
