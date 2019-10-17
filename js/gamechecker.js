@@ -12,6 +12,22 @@ function checkwin(array)
 
     let wNeed = 3;
 
+    // Check for draw first
+    let someFree = false;
+    let someEl = false;
+    for (let line of array) {
+        for (let el of line) {
+            if (el == "")
+                someFree = true;
+            if (el == pCh2 || el == pCh1)
+                someEl = true;
+            if (someEl && someFree)
+                break;
+        }
+        if (someFree && someEl)
+            break;
+    }
+
     // Check lines
     for (let line  of array) {
         let winning = "";
@@ -145,7 +161,13 @@ function checkwin(array)
     if (player1 || player2)
         return "WIN";
 
-    return "IN PROGRESS";
+    if (!someFree && !someEl)
+        return "IN PROGRESS";
+
+    if (someFree)
+        return "IN PROGRESS";  
+
+    return "DRAW";
 }
 
 module.exports = checkwin;
