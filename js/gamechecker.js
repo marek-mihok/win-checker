@@ -93,9 +93,7 @@ function checkwin(array)
                 let xCol = col;
                 for (let xLine = line + 1; xLine < len; ++xLine) {
                     xCol++;
-                    if (xCol >= len)
-                        break;
-                    if (array[xLine][xCol] != winning)
+                    if (xCol >= len || array[xLine][xCol] != winning)
                         break;
                     if (winning == pCh1) {
                         pFound1++;
@@ -114,11 +112,10 @@ function checkwin(array)
                 xCol = col;
                 for (let xLine = line + 1; xLine < len; ++xLine) {
                     xCol--;
-                    if (xCol < 0)
-                        break;
-                        if (xCol >= len)
-                        break;
-                    if (array[xLine][xCol] != winning)
+                    if (xCol < 0 || 
+                        xCol >= len || 
+                        array[xLine][xCol] != winning
+                    )
                         break;
                     if (winning == pCh1) {
                         pFound1++;
@@ -135,12 +132,10 @@ function checkwin(array)
         }
     }
 
-    if (!someFree && !someEl)
-        return "IN PROGRESS";
-
     if (someFree)
-        return "IN PROGRESS";  
-
+        return "IN PROGRESS"; 
+    else if (!someEl) // !someFree has to be true
+        return "IN PROGRESS";
     return "DRAW";
 }
 
